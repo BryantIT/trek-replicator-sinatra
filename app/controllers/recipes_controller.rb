@@ -1,8 +1,12 @@
 class RecipesController < ApplicationController
 
   get "/recipes" do
-    @recipes = Recipe.all
-    erb :"recipes/index"
+    if logged_in?
+      @recipes = Recipe.all
+      erb :"recipes/index"
+    else
+      redirect "/login"
+    end
   end
 
   get "/recipes/new" do
@@ -13,7 +17,10 @@ class RecipesController < ApplicationController
   get "/recipes/:id/edit" do
     @users = User.all
     @recipe = Recipe.find_by_id(params[:id])
-    erb :"recipes/edit"
+    if @recipe.user.id == current_user.id
+      erb :"recipes/edit"
+    else
+      redirect "/recipes"
   end
 
   patch "/recipes/:id" do
@@ -45,8 +52,4 @@ class RecipesController < ApplicationController
     @recipe.delete
     redirect "/recipes"
   end
-
-
-
-
 end
