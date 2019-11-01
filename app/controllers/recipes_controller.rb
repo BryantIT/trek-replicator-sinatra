@@ -10,21 +10,43 @@ class RecipesController < ApplicationController
     erb :"recipes/new"
   end
 
+  get "/recipes/:id/edit" do
+    @users = User.all
+    @recipe = Recipe.find_by_id(params[:id])
+    erb :"recipes/edit"
+  end
+
+  patch "/recipes/:id" do
+    @recipe = Recipe.find_by_id(params[:id])
+    params.delete("_method")
+    if @recipe.update(params)
+      redirect "/recipes/#{@recipe.id}"
+    else
+      redirect "/recipes/#{@recipe.id}/edit"
+    end
+  end
+
   get "/recipes/:id" do
-    id = params[:id]
-    @recipe = Recipe.find_by_id(:id)
+    @recipe = Recipe.find_by_id(params[:id])
     erb :"recipes/show"
   end
 
   post "/recipes" do
     recipe = Recipe.new(params)
     if recipe.save
-      redirect "recipes/#{recipe.id}"
+      redirect "/recipes/#{recipe.id}"
     else
-      redirect "recipes/new"
+      redirect "/recipes/new"
     end
-
   end
+
+  delete "/recipes/:id" do
+    @recipe = Recipe.find_by_id(params[:id])
+    @recipe.delete
+    redirect "/recipes"
+  end
+
+
 
 
 end

@@ -1,5 +1,10 @@
-test recipes show
 <h1><%= @recipe.name %></h1>
-<p><%= @post.ingredients %></p>
-<p><%= @post.directions %></p>
-<p><%= @post.notes %></p>
+<p><%= @recipe.ingredients %></p>
+<p><%= @recipe.directions %></p>
+<p><%= @recipe.notes %></p>
+
+<h2>Delete Recipe</h2>
+<form method="POST" action="/recipes/<%= @recipe.id %>">
+  <input type="hidden" id="hidden" name="_method" value="DELETE">
+  <input type="submit" value="delete">
+  </form>
