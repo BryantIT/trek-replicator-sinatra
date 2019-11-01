@@ -14,6 +14,20 @@ class RecipesController < ApplicationController
     erb :"recipes/new"
   end
 
+  post "/recipes" do
+    @recipe = Recipe.new(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes], user_id: current_user.id)
+    if @recipe.save
+      redirect "/recipes/#{@recipe.id}"
+    else
+      redirect "/recipes/new"
+    end
+  end
+
+  get "/recipes/:id" do
+    @recipe = Recipe.find_by_id(params[:id])
+    erb :"recipes/show"
+  end
+
   get "/recipes/:id/edit" do
     @users = User.all
     @recipe = Recipe.find_by_id(params[:id])
@@ -22,6 +36,7 @@ class RecipesController < ApplicationController
     else
       redirect "/recipes"
   end
+end
 
   patch "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
@@ -33,23 +48,13 @@ class RecipesController < ApplicationController
     end
   end
 
-  get "/recipes/:id" do
+ delete "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
-    erb :"recipes/show"
-  end
-
-  post "/recipes" do
-    recipe = Recipe.new(params)
-    if recipe.save
-      redirect "/recipes/#{recipe.id}"
+    if @recipe.user.id == current_user.id
+      @recipe.destroy
+      redirect "/recipes"
     else
-      redirect "/recipes/new"
+      redirect "/recipes"
     end
-  end
-
-  delete "/recipes/:id" do
-    @recipe = Recipe.find_by_id(params[:id])
-    @recipe.delete
-    redirect "/recipes"
   end
 end

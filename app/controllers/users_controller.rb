@@ -1,16 +1,15 @@
 class UsersController < ApplicationController
-
-  get "/login" do
-    erb :"/users/login"
+  get '/users/signup' do
+    erb :'/users/signup'
   end
 
-  post "/login" do
-    user = User.find_by(name: params[:name])
-    if user && user.authenticate(params[:password])
-      session[:user_id] = user.id
-      redirect "/recipes"
+  post '/users' do
+    @user = User.new(params)
+    if @user.save
+      session[:user_id] = @user.id
+      redirect '/recipes'
     else
-      redirect "/login"
+      redirect '/users/signup'
     end
   end
 end

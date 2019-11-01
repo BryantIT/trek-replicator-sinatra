@@ -3,19 +3,15 @@ test recipes new
 
 <form method="POST" action="/recipes">
 
-  <select name="user_id">
-    <% @users.each do |user| %>
-    <option value="<%= user.id %>"> <%= user.username %></option>
-    <% end %>
-  </select>
+
 name
-  <input type="text" name="name">
+    <input type="text" name="name"><br>
 ingredients
-    <textarea name="ingredients"></textarea>
-    directions
-    <textarea name="directions"></textarea>
-  notes
-    <textarea name="notes"></textarea>
+    <textarea name="ingredients"></textarea><br>
+directions
+    <textarea name="directions"></textarea><br>
+notes
+    <textarea name="notes"></textarea><br>
 
 
     <input type="submit">
