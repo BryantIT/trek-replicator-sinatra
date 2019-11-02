@@ -1,6 +1,6 @@
 class UsersController < ApplicationController
-  get '/users/signup' do
-    erb :'/users/signup'
+  get '/users/register' do
+    erb :'/users/register'
   end
 
   post '/users' do
@@ -9,7 +9,7 @@ class UsersController < ApplicationController
       session[:user_id] = @user.id
       redirect '/recipes'
     else
-      redirect '/users/signup'
+      redirect '/users/register'
     end
   end
 end

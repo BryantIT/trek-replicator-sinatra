@@ -1,15 +1,128 @@
-<h1>Program Your Recipe</h1>
-
-<form method="POST" action="/recipes/<%= @recipe.id %>">
-  <input type="hidden" id="hidden" name="_method" value="PATCH">
 
 
-  <input type="text" name="name" value="<%= @recipe.name %>">
 
-    <textarea name="directions"><%= @recipe.directions %></textarea>
-    <textarea name="ingredients"><%= @recipe.ingredients %></textarea>
-    <textarea name="notes"><%= @recipe.notes %></textarea>
+<!--
+Template LCARS PADD réalisé par DrAg0r.
+Inspiré par le design original de Michael Okuda pour Star Trek.
+Informations et téléchargement sur : http://lcars.padd.online.fr/
+Par respect pour l'auteur, merci de laisser ce commentaire intact.
+-->
+<!DOCTYPE HTML>
+<html>
+ <head>
+	<meta charset="utf-8">
+	<title>Personnel Food Replicator</title>
 
-    <input type="submit">
+	<LINK rel="stylesheet" type="text/css" href="style_2_col.css">
+ </head>
+ <body>
+  <div class="title_block">
+   <div class="left_title"></div>
+   <div class="title_content">
+    <h1>Starfleet Food Replicator</h1>
+    <h2 style="display:inline;">Personnel Access</h2>
+   </div>
+   <div class="low_title">
+    <div class="low_left_title"></div>
+    <div class="concave_low_left_title"></div>
+    <div class="bottom_left_1_title"></div>
+    <div class="bottom_left_2_title"></div>
+    <div class="low_mid_title"></div>
+    <div class="bottom_right_2_title"></div>
+    <div class="bottom_right_1_title"></div>
+    <div class="bottom_right_title"></div>
+   </div>
+  </div>
+  <div class="relative_div">
+   <div class="block_menu">
+    <div class="high_menu">
+     <div class="high_right_menu"></div>
+     <div class="concave_high_right_menu"></div>
+     <div class="hidden_high_right_menu"></div>
+     <div class="high_left_2_menu"></div>
+     <div class="high_left_1_menu"></div>
+     <div class="high_left_menu"></div>
+    </div>
+    <div class="right_menu">
+     <div class="right_high_menu"><span class="code">999-8</span></div>
+     <div class="right_high_1_menu"><span class="code">C9C-3</span></div>
+     <div class="right_high_2_menu"><span>C66-12 </span></div>
+     <div class="right_high_3_menu"><span class="code">9CF-7</span></div>
+     <div class="right_high_4_menu"><span>999-14 </span></div>
+    </div>
+    <div class="menu">
+      <a class=button href='/recipes'>Recipes</a><span class=return_cart></span><a class=button href='/recipes/new'>New</a><span class=return_cart></span>
+<a class=button href='/logout'>Logout</a><span class=return_cart></div>
+    <div class="right_low_menu"></div>
+    <div class="low_menu">
+     <div class="low_right_menu"></div>
+     <div class="concave_low_right_menu"></div>
+     <div class="low_left_2_menu"></div>
+     <div class="low_left_1_menu"></div>
+     <div class="low_left_menu"></div>
+    </div>
+   </div>
+   <div class="block_contents">
+    <div class="high_left"></div>
+    <div class="concave_high_left"></div>
+    <div class="hidden_high_left"></div>
+    <div class="high_left_1"></div>
+    <div class="high_left_2"></div>
+    <div class="high_mid"></div>
+    <div class="high_right_2"></div>
+    <div class="high_right_1"></div>
+    <div class="high_right"></div>
+    <div class="left">
+     <div class="left_high"><span class="code">C66-15</span></div>
+     <div class="left_high_1"><span class="code">9CF-3</span></div>
+     <div class="left_high_2"><span>FC6-9 </span></div>
+     <div class="left_high_3"><span class="code">C9C-20</span></div>
+     <div class="left_high_4"><span>C66-9 </span></div>
+    </div>
+    <div class="contents">
 
-</form>
+
+
+
+
+
+    <form method="POST" action="/recipes/<%= @recipe.id %>">
+      <input type="hidden" id="hidden" name="_method" value="PATCH">
+
+
+      <h1 style="text-decoration:underline;">Edit Your Recipe</h1>
+      <hr id="thread4">
+  		<hr id="thread5" class="right">
+      <br>
+      <h2>Recipe Name:</h2>
+        <input type="text" name="name" spellcheck="true" value="<%= @recipe.name %>" required><br>
+        <h2>Ingredients:</h2>
+        <textarea name="ingredients" rows="10" cols="50" ><%= @recipe.directions %></textarea><br>
+        <h2>Directions:</h2>
+        <textarea name="directions" rows="10" cols="50" ><%= @recipe.ingredients %></textarea><br>
+        <h2>Notes:</h2>
+        <textarea name="notes" rows="10" cols="50" ><%= @recipe.notes %></textarea><br>
+
+        <input type="submit">
+
+    </form>
+
+
+
+
+        </div><br>
+    <div class="left_low"></div>
+    <div class="low">
+     <div class="low_left"></div>
+     <div class="concave_low_left"></div>
+     <div class="low_left_1"></div>
+     <div class="low_left_2"></div>
+     <div class="low_mid"></div>
+     <div class="low_right_2"></div>
+     <div class="low_right_1"></div>
+     <div class="low_right"></div>
+    </div>
+   </div>
+  </div>
+ </body>
+</html>
