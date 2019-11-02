@@ -1,0 +1,381 @@
+body {
+  padding: 15px; }
+
+body > .wrapper.row {
+  height: 100%; }
+
+.wrapper.spacer {
+  margin: 0; }
+
+p.capital {
+  text-transform: uppercase; }
+
+p {
+  text-align: justify;
+  text-justify: inter-word; }
+
+.button-wrap {
+  flex-wrap: wrap;
+  margin-top: 0;
+  padding-top: 5px;
+  width: 100%; }
+  .button-wrap .button {
+    margin-bottom: 5px;
+    margin-left: 5px; }
+
+#main.form-3 > .header {
+  height: 220px; }
+  #main.form-3 > .header .title {
+    text-align: right; }
+  #main.form-3 > .header .button-wrap {
+    width: 320px;
+    right: 0px;
+    bottom: 35px;
+    position: absolute; }
+  #main.form-3 > .header pre {
+    font-size: 24px; }
+
+#main.form-4 > .content {
+  height: 100%;
+  height: 300px;
+  overflow: hidden; }
+  #main.form-4 > .content .bar.vertical {
+    margin-top: 75px;
+    margin-bottom: 45px; }
+
+#main.form-4 > .header,
+#main.form-4 > .footer {
+  height: 220px; }
+
+/*
+  XXX: I'd overlap this with the .bar class but bar sizes differently from button nodes */
+.nobutton {
+  min-width: 150px;
+  min-height: 60px;
+  cursor: default; }
+
+.nobutton[data-label]:before {
+  content: attr(data-label); }
+
+.nobutton:before {
+  font-size: 20px;
+  display: block;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  right: 0px;
+  padding: 4px 8px;
+  letter-spacing: -1px;
+  line-height: 1.25;
+  overflow: hidden;
+  max-height: 100%; }
+
+/*
+  XXX: Define top/bottom just like left/right/pill, also apply to bar not just
+    button? */
+.bar.top,
+.button.top,
+.nobutton.top {
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px; }
+
+.bar.bottom,
+.nobutton.bottom,
+.button.bottom {
+  border-bottom-left-radius: 30px;
+  border-bottom-right-radius: 30px; }
+
+.bar.top:before, .bar.bottom:before, .bar.top:after, .bar.bottom:after,
+.nobutton.top:before,
+.nobutton.bottom:before,
+.nobutton.top:after,
+.nobutton.bottom:after,
+.button.top:before,
+.button.bottom:before,
+.button.top:after,
+.button.bottom:after {
+  left: 25px;
+  right: 25px; }
+
+/* Some helpers for FORM-1 */
+#columnA > .column.dialog.wrapper,
+#columnB > .column.dialog.wrapper {
+  width: 100%;
+  height: 100%; }
+
+#columnA > .wrapper > .content.flexcv,
+#columnB > .wrapper > .content.flexcv {
+  overflow: hidden;
+  height: 100%; }
+
+#columnA > .wrapper > .content.flexcv > .content,
+#columnB > .wrapper > .content.flexcv > .content {
+  overflow: auto;
+  width: 100%;
+  height: 100%; }
+
+/* Tango palette <http://tango.freedesktop.org/Tango_Icon_Theme_Guidelines>*/
+/* Butter 1 */
+/* Butter 1 - 20% */
+/* Butter 1 - 10% */
+/* Butter 2 */
+/* Butter 3 */
+/* Orange 1 */
+/* Orange 1 - 20% */
+/* Orange 1 - 10% */
+/* Orange 2 */
+/* Orange 3 */
+/* Chocolate 1 */
+/* Chocolate 2 */
+/* Chocolate 3 */
+/* Green 1 */
+/* Green 2 */
+/* Green 3 */
+/* Blue 1 */
+/* Blue 2 */
+/* Blue 3 */
+/* Plum 1 */
+/* Plum 2 */
+/* Plum 3 */
+/* Scarlet Red 1 */
+/* Scarlet Red 2 */
+/* Scarlet Red 3 */
+/* Aluminium 1 */
+/* Aluminium 2 */
+/* Aluminium 3 */
+/* Aluminium 4 */
+/* Aluminium 5 */
+/* Aluminium 6 */
+/* Node backgrounds colors */
+/*   1. Oranges */
+.bg-cat-1-1,
+.bg-cat-1-1 > *:not([class*="bg-"]) {
+  background-color: #fcaf3e;
+  border-color: #fcaf3e; }
+
+.bg-cat-1-2,
+.bg-cat-1-2 > *:not([class*="bg-"]) {
+  background-color: #f57900;
+  border-color: #f57900; }
+
+.bg-cat-1-3,
+.bg-cat-1-3 > *:not([class*="bg-"]) {
+  background-color: #ce5c00;
+  border-color: #ce5c00; }
+
+/*   2. Creme browns */
+.bg-cat-2-1,
+.bg-cat-2-1 > *:not([class*="bg-"]) {
+  background-color: #8f5902;
+  border-color: #8f5902; }
+
+.bg-cat-2-2,
+.bg-cat-2-2 > *:not([class*="bg-"]) {
+  background-color: #c17d11;
+  border-color: #c17d11; }
+
+.bg-cat-2-3,
+.bg-cat-2-3 > *:not([class*="bg-"]) {
+  background-color: #e9b96e;
+  border-color: #e9b96e; }
+
+/*   3. Greens */
+.bg-cat-3-1,
+.bg-cat-3-1 > *:not([class*="bg-"]) {
+  background-color: #4e9a06;
+  border-color: #4e9a06; }
+
+.bg-cat-3-2,
+.bg-cat-3-2 > *:not([class*="bg-"]) {
+  background-color: #73d216;
+  border-color: #73d216; }
+
+.bg-cat-3-3,
+.bg-cat-3-3 > *:not([class*="bg-"]) {
+  background-color: #8ae234;
+  border-color: #8ae234; }
+
+/*   4. Purples */
+.bg-cat-4-1,
+.bg-cat-4-1 > *:not([class*="bg-"]) {
+  background-color: #ad7fa8;
+  border-color: #ad7fa8; }
+
+.bg-cat-4-2,
+.bg-cat-4-2 > *:not([class*="bg-"]) {
+  background-color: #75507b;
+  border-color: #75507b; }
+
+.bg-cat-4-3,
+.bg-cat-4-3 > *:not([class*="bg-"]) {
+  background-color: #5c3566;
+  border-color: #5c3566; }
+
+/*   5. Yellow browns */
+.bg-cat-5-1,
+.bg-cat-5-1 > *:not([class*="bg-"]) {
+  background-color: #c4a000;
+  border-color: #c4a000; }
+
+.bg-cat-5-2,
+.bg-cat-5-2 > *:not([class*="bg-"]) {
+  background-color: #edd400;
+  border-color: #edd400; }
+
+.bg-cat-5-3,
+.bg-cat-5-3 > *:not([class*="bg-"]) {
+  background-color: #fce94f;
+  border-color: #fce94f; }
+
+/*   5. Blues */
+.bg-cat-6-1,
+.bg-cat-6-1 > *:not([class*="bg-"]) {
+  background-color: #204a87;
+  border-color: #204a87; }
+
+.bg-cat-6-2,
+.bg-cat-6-2 > *:not([class*="bg-"]) {
+  background-color: #3465a4;
+  border-color: #3465a4; }
+
+.bg-cat-6-3,
+.bg-cat-6-3 > *:not([class*="bg-"]) {
+  background-color: #729fcf;
+  border-color: #729fcf; }
+
+/*   6. Reds */
+.bg-red-1,
+.bg-red-1 > *:not([class*="bg-"]) {
+  background-color: #ef2929;
+  border-color: #ef2929; }
+
+.bg-red-2,
+.bg-red-2 > *:not([class*="bg-"]) {
+  background-color: #cc0000;
+  border-color: #cc0000; }
+
+.bg-red-3,
+.bg-red-3 > *:not([class*="bg-"]) {
+  background-color: #a40000;
+  border-color: #a40000; }
+
+/* Grey levels for node background */
+.bg-grey-1,
+.bg-grey-1 > *:not([class*="bg-"]) {
+  background-color: #eeeeec;
+  border-color: #eeeeec; }
+
+.bg-grey-2,
+.bg-grey-2 > *:not([class*="bg-"]) {
+  background-color: #d3d7cf;
+  border-color: #d3d7cf; }
+
+.bg-grey-3,
+.bg-grey-3 > *:not([class*="bg-"]) {
+  background-color: #babdb6;
+  border-color: #babdb6; }
+
+.bg-grey-4,
+.bg-grey-4 > *:not([class*="bg-"]) {
+  background-color: #888a85;
+  border-color: #888a85; }
+
+.bg-grey-5,
+.bg-grey-5 > *:not([class*="bg-"]) {
+  background-color: #555753;
+  border-color: #555753; }
+
+.bg-grey-6,
+.bg-grey-6 > *:not([class*="bg-"]) {
+  background-color: #2e3436;
+  border-color: #2e3436; }
+
+/* Colors for Text */
+/*   1. Oranges */
+.text-1-1 {
+  color: #fcaf3e; }
+
+.text-1-2 {
+  color: #f57900; }
+
+.text-1-3 {
+  color: #ce5c00; }
+
+/*   2. Creme browns */
+.text-2-1 {
+  color: #8f5902; }
+
+.text-2-2 {
+  color: #c17d11; }
+
+.text-2-3 {
+  color: #e9b96e; }
+
+/*   3. Greens */
+.text-3-1 {
+  color: #4e9a06; }
+
+.text-3-2 {
+  color: #73d216; }
+
+.text-3-3 {
+  color: #8ae234; }
+
+/*   4. Purples */
+.text-4-1 {
+  color: #ad7fa8; }
+
+.text-4-2 {
+  color: #75507b; }
+
+.text-4-3 {
+  color: #5c3566; }
+
+/*   5. Yellow browns */
+.text-5-1 {
+  color: #c4a000; }
+
+.text-5-2 {
+  color: #edd400; }
+
+.text-5-3 {
+  color: #fce94f; }
+
+/*   5. Blues */
+.text-6-1 {
+  color: #204a87; }
+
+.text-6-2 {
+  color: #3465a4; }
+
+.text-6-3 {
+  color: #729fcf; }
+
+/*   6. Reds */
+.text-red-1 {
+  color: #a40000; }
+
+.text-red-2 {
+  color: #cc0000; }
+
+.text-red-3 {
+  color: #ef2929; }
+
+/* Grey levels for text */
+.text-grey-1 {
+  color: #eeeeec; }
+
+.text-grey-2 {
+  color: #d3d7cf; }
+
+.text-grey-3 {
+  color: #babdb6; }
+
+.text-grey-4 {
+  color: #888a85; }
+
+.text-grey-5 {
+  color: #555753; }
+
+.text-grey-6 {
+  color: #2e3436; }

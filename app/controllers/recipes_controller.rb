@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
 
   get "/recipes" do
     if logged_in?
-      @recipes = Recipe.all
+      @recipes = current_user.recipes.all
       erb :"recipes/index"
     else
       redirect "/login"
@@ -25,13 +25,16 @@ class RecipesController < ApplicationController
 
   get "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
+    if @recipe.user_id == current_user.id
     erb :"recipes/show"
+    else
+    redirect "/recipes"
+    end
   end
 
   get "/recipes/:id/edit" do
-    @users = User.all
     @recipe = Recipe.find_by_id(params[:id])
-    if @recipe.user.id == current_user.id
+    if @recipe.user_id == current_user.id
       erb :"recipes/edit"
     else
       redirect "/recipes"
@@ -41,7 +44,7 @@ end
   patch "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
     params.delete("_method")
-    if @recipe.update(params)
+    if @recipe.update(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes], user_id: current_user.id)
       redirect "/recipes/#{@recipe.id}"
     else
       redirect "/recipes/#{@recipe.id}/edit"
