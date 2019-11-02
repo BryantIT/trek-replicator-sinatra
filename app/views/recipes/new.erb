@@ -17,7 +17,9 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
    <div class="left_title"></div>
    <div class="title_content">
     <h1>Starfleet Food Replicator</h1>
-    <h2 style="display:inline;">Personnel Access</h2>
+    <% if logged_in? %>
+    <h3>Welcome <%= current_user.username %></h3>
+    <% end %>
    </div>
    <div class="low_title">
     <div class="low_left_title"></div>
@@ -48,7 +50,7 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
      <div class="right_high_4_menu"><span>999-14 </span></div>
     </div>
     <div class="menu">
-     <a class=button href='/recipes'>Recipes</a><span class=return_cart></span><a class=button href='logout'>Logout</a><span class=return_cart></div>
+     <a class=button href='/recipes'>Recipes</a><span class=return_cart></span><a class=button href='/logout'>Logout</a><span class=return_cart></div>
     <div class="right_low_menu"></div>
     <div class="low_menu">
      <div class="low_right_menu"></div>
@@ -77,6 +79,11 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
     </div>
     <div class="contents">
       <form method="POST" action="/recipes">
+        <% if @user.errors.any? %>
+    <% @user.errors.full_messages.each do |message| %>
+      <%= message %>
+    <% end %>
+  <% end %>
 
         <h1 style="text-decoration:underline;">Program Your Recipe</h1>
         <h2>Recipe Name:</h2>
@@ -89,7 +96,7 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
           <textarea name="notes" rows="10" cols="50" ></textarea><br>
 
 
-          <input type="submit">
+          <input type="image" src="/images/linstar.png" style="width:1000px;height:50px;border:0;" alt="Submit">
 
       </form>
       </div><br>

@@ -17,7 +17,9 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
    <div class="left_title"></div>
    <div class="title_content">
     <h1>Starfleet Food Replicator</h1>
-    <h2 style="display:inline;">Personnel Access</h2>
+    <% if logged_in? %>
+    <h3>Welcome <%= current_user.username %></h3>
+    <% end %>
    </div>
    <div class="low_title">
     <div class="low_left_title"></div>
@@ -49,7 +51,7 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
     </div>
     <div class="menu">
       <a class=button href='/recipes'>Recipes</a><span class=return_cart></span><a class=button href='/recipes/new'>New</a><span class=return_cart></span><a class=button href='/recipes/<%= @recipe.id %>/edit'>Edit</a><span class=return_cart></span>
-<a class=button href='logout'>Logout</a><span class=return_cart></div>
+<a class=button href='/logout'>Logout</a><span class=return_cart></div>
     <div class="right_low_menu"></div>
     <div class="low_menu">
      <div class="low_right_menu"></div>
@@ -80,11 +82,11 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
 		<h1><%= @recipe.name %></h1><br>
 		<hr id="thread4">
 		<hr id="thread5" class="right">
-      <h3><%= @recipe.ingredients %></h3><br>
+      <h3><%= @recipe.ingredients.gsub(/\n/, '<br>') %></h3><br>
   		<hr>
-      <h3><%= @recipe.directions %></h3><br>
+      <h3><%= @recipe.directions.gsub(/\n/, '<br>') %></h3><br>
       <hr>
-      <h3><%= @recipe.notes %></h3><br>
+      <h3><%= @recipe.notes.gsub(/\n/, '<br>') %></h3><br>
 
 
       <form method="POST" action="/recipes/<%= @recipe.id %>">

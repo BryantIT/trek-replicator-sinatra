@@ -5,7 +5,7 @@ class RecipesController < ApplicationController
       @recipes = current_user.recipes.all
       erb :"recipes/index"
     else
-      redirect "/login"
+      erb :"/sessions/error"
     end
   end
 

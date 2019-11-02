@@ -28,6 +28,8 @@ img, embed, iframe {
 input, textarea {
  border-radius: 1em;
  margin: 0.1em;
+ white-space: pre-wrap;
+ white-space: pre-line;
 }
 
 .relative_div {

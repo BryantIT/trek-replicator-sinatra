@@ -20,7 +20,9 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
    <div class="left_title"></div>
    <div class="title_content">
     <h1>Starfleet Food Replicator</h1>
-    <h2 style="display:inline;">Personnel Access</h2>
+    <% if logged_in? %>
+    <h3>Welcome <%= current_user.username %></h3>
+    <% end %>
    </div>
    <div class="low_title">
     <div class="low_left_title"></div>
@@ -103,7 +105,7 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
         <h2>Notes:</h2>
         <textarea name="notes" rows="10" cols="50" ><%= @recipe.notes %></textarea><br>
 
-        <input type="submit">
+        <input type="image" src="/images/linstar.png" style="width:1000px;height:50px;border:0;" alt="Submit">
 
     </form>
 

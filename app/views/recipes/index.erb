@@ -17,7 +17,9 @@ Par respect pour l'auteur, merci de laisser ce commentaire intact.
    <div class="left_title"></div>
    <div class="title_content">
     <h1>Starfleet Food Replicator</h1>
-    <h2 style="display:inline;">Options</h2>
+    <% if logged_in? %>
+    <h3>Welcome <%= current_user.username %></h3>
+    <% end %>
    </div>
    <div class="low_title">
     <div class="low_left_title"></div>
