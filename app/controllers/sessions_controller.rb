@@ -10,7 +10,7 @@ class SessionsController < ApplicationController
       session[:user_id] = user.id
       redirect "/recipes"
     else
-      
+
       redirect "/login"
     end
   end

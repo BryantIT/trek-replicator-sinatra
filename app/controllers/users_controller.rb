@@ -1,4 +1,5 @@
 class UsersController < ApplicationController
+
   get '/users/register' do
     erb :'/users/register'
   end
