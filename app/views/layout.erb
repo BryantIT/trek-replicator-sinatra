@@ -3,28 +3,24 @@
 <!--[if IE 7]>    <html class="no-js ie7 oldie" lang="en"> <![endif]-->
 <!--[if IE 8]>    <html class="no-js ie8 oldie" lang="en"> <![endif]-->
 <!--[if gt IE 8]><!--> <html class="no-js" lang="en"> <!--<![endif]-->
-  <head>
-    <meta charset="utf-8" />
-    <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge, chrome=1" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>TrekReplicatorSinatra</title>
+  <title>Personnel Food Replicator</title>
 
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-
-    <link rel="stylesheet" href="/stylesheets/main.css" />
-  </head>
+  <link rel="stylesheet" type="text/css" href="/stylesheets/main.css">
+</head>
+  <html>
   <body>
     <div class="wrapper">
 
 
         <%= yield %>
 
-      <footer class="branding">
-        <% if logged_in? %>
-        <h4>Welcome <%= current_user.username %></h4>
-        <h4><a href="/logout">Logout</a></h4>
-        <% end %>
-        <small>&copy; 2019 <strong>TrekReplicatorSinatra</strong></small>
+      <footer>
+        
       </footer>
     </div>
 
@@ -33,5 +29,5 @@
       <script src="//ajax.googleapis.com/ajax/libs/chrome-frame/1.0.2/CFInstall.min.js"></script>
       <script>window.attachEvent("onload",function(){CFInstall.check({mode:"overlay"})})</script>
     <![endif]-->
-    
+
   </body>

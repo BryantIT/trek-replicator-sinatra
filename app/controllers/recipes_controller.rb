@@ -15,7 +15,7 @@ class RecipesController < ApplicationController
   end
 
   post "/recipes" do
-    @recipe = Recipe.new(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes], user_id: current_user.id)
+    @recipe = current_user.recipes.build(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes])
     if @recipe.save
       redirect "/recipes/#{@recipe.id}"
     else
@@ -44,7 +44,7 @@ end
   patch "/recipes/:id" do
     @recipe = Recipe.find_by_id(params[:id])
     params.delete("_method")
-    if @recipe.update(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes], user_id: current_user.id)
+    if @recipe.user.id == current_user.id && @recipe.update(name: params[:name], ingredients: params[:ingredients], directions: params[:directions], notes: params[:notes], user_id: current_user.id)
       redirect "/recipes/#{@recipe.id}"
     else
       redirect "/recipes/#{@recipe.id}/edit"
