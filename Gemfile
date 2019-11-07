@@ -8,6 +8,8 @@ gem 'require_all'
 gem 'thin'
 gem 'bcrypt'
 gem 'faker'
+ruby '2.6.1'
+gem 'puma'
 
 group :development do
   gem 'sqlite3', '~> 1.3.6'
