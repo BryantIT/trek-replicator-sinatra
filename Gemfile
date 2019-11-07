@@ -10,6 +10,7 @@ gem 'bcrypt'
 gem 'faker'
 ruby '2.6.1'
 gem 'puma'
+gem 'dotenv'
 
 group :development do
   gem 'sqlite3', '~> 1.3.6'
