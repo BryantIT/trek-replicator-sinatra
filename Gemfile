@@ -11,7 +11,7 @@ gem 'faker'
 ruby '2.6.1'
 gem 'puma'
 gem 'dotenv'
-gem 'pg'
+gem 'pg', '~> 0.20'
 
 group :development do
   gem 'sqlite3', '~> 1.3.6'
