@@ -62,5 +62,5 @@ node_modules/
 .yarn-integrity
 
 # dotenv environment variables file
-.env
+# .env
 SESSION_SECRET=0b37a7f41bacd6c676d105fbecfff3ba3a59d8290afcf567aa935c88e55195b16137c44121212b982f3768dc1b51b8a9f31053ea8480c3d9cc8ebb8f97294dcf
